@@ -1,1 +1,0 @@
-api_key = 'BVfAkPtSZ5d3DzWrQfAnrwlq8cHGRSN67eTDgRra' #pls don't steal
