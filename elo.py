@@ -13,6 +13,8 @@ import json
 import pickle
 import os
 
+from config import api_key
+
 rerun = True
 
 from classes import Player, Set, Tournament, League
@@ -35,7 +37,7 @@ path = 'league.json'
 if(not os.path.isfile(path) and rerun):
     # Generate from API
     print("Generating via API")
-    api_key = 'BVfAkPtSZ5d3DzWrQfAnrwlq8cHGRSN67eTDgRra' #pls don't steal
+    
 
     for name, data in events.items():
         if(events[name][0] != None):
