@@ -2,11 +2,18 @@
 import requests
 from tabulate import tabulate
 import numpy as np
-import matplotlib.pyplot as plt
+import bokeh
+from bokeh.plotting import figure, output_file, show
+from bokeh.io import export_png
+from bokeh.palettes import Spectral4
+from bokeh.sampledata.stocks import AAPL, IBM, MSFT, GOOG
+import numpy as np
 from pprint import pprint
 import json
 import pickle
 import os
+
+rerun = True
 
 from classes import Player, Set, Tournament, League
 print("testing scoring 2")
@@ -25,7 +32,7 @@ events = {
 league = League("Forward Smash")
 path = 'league.json'
 # Build League
-if(not os.path.isfile(path)):
+if(not os.path.isfile(path) and rerun):
     # Generate from API
     print("Generating via API")
     api_key = 'BVfAkPtSZ5d3DzWrQfAnrwlq8cHGRSN67eTDgRra' #pls don't steal
@@ -58,58 +65,6 @@ else:
     print("%s has %s players and %s tournaments"%(league.get_info()))
 
 # League object is now built, rankings can be performed easily!
-
-for name, player in league.get_players().items():
-    player.reset_rank()
-
-def elo_score_set(winner, loser):
-    if((winner.get_rank_current()) == None): winner.set_rank_current(1200)
-    if((loser.get_rank_current()) == None): loser.set_rank_current(1200)
-    
-    P1 = (1.0 / (1.0 + (10**((loser.get_rank_current() - winner.get_rank_current())/400))))
-    P2 = (1.0 / (1.0 + (10**((winner.get_rank_current() - loser.get_rank_current())/400))))
-    
-    #choose lowest K
-    low_K = winner.get_K() if winner.get_K() <= loser.get_K() else loser.get_K()
-    
-    w_new_rank = winner.get_rank_current() + low_K * (1 - P1)
-    l_new_rank = loser.get_rank_current() + low_K * (0 - P2)
-
-    winner.set_rank_current(w_new_rank)
-    loser.set_rank_current(l_new_rank)
-    return
-
-# f = open('league.json', 'w', encoding='utf8')
-# f.write(league.toJSON())
-# f.close()
-
-tournaments = league.get_tournaments()
-players = league.get_players()
-for name, tournament in tournaments.items():
-    # apply ranking algorithm for each match in each set:
-    t_sets = tournament.get_sets()
-    print("\nTournament: %s\n"%(name))
-    for c_set in t_sets:
-        winner = league.get_player(c_set["winner"])
-        loser = league.get_player(c_set["loser"])
-        print("Scoring %s (%s) vs %s (%s)"%(winner.get_name(), winner.get_rank_current(), loser.get_name(), loser.get_rank_current()))
-        elo_score_set(winner, loser)
-        print("Scored  %s (%s) vs %s (%s)"%(winner.get_name(), winner.get_rank_current(), loser.get_name(), loser.get_rank_current()))
-        winner.add_set(name, c_set)
-        loser.add_set(name, c_set)
-        
-    
-    for name, player in players.items():
-        player.commit_rank()
-    
-    
-        
-
-f = open('league.json', 'w', encoding='utf8')
-f.write(league.toJSON())
-f.close()
-
-
 def elo_sort(players):
     plist = []
     for name, player in players.items():
@@ -126,12 +81,100 @@ def elo_sort(players):
     return plist_s
 
 
+for name, player in league.get_players().items():
+    player.reset_rank()
+
+
+league.processRanks()
+
+#league.save('league.json')       
+
 print(tabulate(elo_sort(league.get_players())))
 
-ranks_dt = []
-for name, player in league.get_players().items():
-    temp = [name]
-    temp.extend(player.get_rank_history())
-    ranks_dt.append(temp)
 
-print(tabulate(ranks_dt))
+for name, player in league.get_players().items():
+    player.reset_rank()
+    
+
+league.processRanks(decay=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+# Results
+#
+
+
+
+print(tabulate(elo_sort(league.get_players())))
+
+# ranks_dt = []
+# for name, player in league.get_players().items():
+#     temp = [name]
+#     temp.extend(player.get_rank_history())
+#     ranks_dt.append(temp)
+
+# ranks_dt_s = sorted(ranks_dt, key=lambda x: x[7], reverse=True)
+
+# print(tabulate(ranks_dt_s, showindex='always', headers=['Name', 'SB2', 'SB4', 'C1', 'C2', 'Cinco', 'C3', 'M1']))
+# pprint(AAPL.keys())
+# ##  Visualizations
+# FSMASH = {}
+# t = ["SB2", "SB4", "C1", "C2", "Cinco", "C3", "M1"]
+# for tournament in t:
+#     FSMASH{tournament} = []
+#     for rank in rank_dt:
+        
+
+
+
+
+
+# p = figure(plot_width=800, plot_height=250) #, x_axis_type="datetime")
+# p.title.text = 'Click on legend entries to hide the corresponding lines'
+
+# for data, name, color in zip((xs, ys), names, Spectral4):
+#     p.line(data[0], data[1], line_width=2, color=color, alpha=.8, legend=name)
+
+# p.legend.location = "top_left"
+# p.legend.click_policy="hide"
+
+#output_file("interactive_legend.html", title="interactive_legend.py example")
+
+#show(p)
+
+#######################
+
+    
+# # print(names)
+# # print(ys)
+# # print(xs)
+
+# output_file("ranks_dt.html")
+# p = figure(title="Ranks Over Time", x_axis_label='time', y_axis_label='rank')
+# p.xaxis.ticker = [0, 1, 2, 3, 4, 5, 6, 7]
+# p.xaxis.major_label_overrides = {0: 'SB2', 1: 'SB4', 2: 'C1', 3: 'C2', 4: 'Cinco', 5: 'C3', 6: 'M1'}
+
+# p.multi_line(xs, ys, names)
+# show(p)

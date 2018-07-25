@@ -6,6 +6,7 @@ from pprint import pprint
 import json
 import pickle
 
+from scoring import elo_score_set, processDecay
 
 # Class Definitions
 class JsonSerializable():
@@ -68,9 +69,11 @@ class Player(JsonSerializable):
 class Set(JsonSerializable):
     def __init__(self, winner, loser):
         self.index = None
+        self.dq = False
         self.winner = winner
         self.loser = loser
-
+        
+    
     def __str__(self):
         return '('+str(self.winner)+", "+str(self.loser)+')'
         
@@ -95,6 +98,7 @@ class Tournament(JsonSerializable):
         self.name = name
         self.is_ranked = is_ranked
         self.sets = []
+        self.attendies = []
     
     def get_name(self):
         return self.name
@@ -136,6 +140,14 @@ class Tournament(JsonSerializable):
 
     def get_sets(self):
         return self.sets
+    
+    def add_attendie(self, attendie):
+        if(attendie not in self.attendies):
+            self.attendies.append(attendie)
+        
+    def get_attendies(self):
+        return self.attendies
+        
 
 
 
@@ -175,10 +187,16 @@ class League(JsonSerializable):
     def get_tournament(self, name):
         return self.tournaments[name]
     
+    def save(self, path):
+        f = open(path, 'w', encoding='utf8')
+        f.write(self.toJSON())
+        f.close()
+    
     def load(self, filepath):
         f = open(filepath).read()
         data = json.loads(f, encoding='utf-8')
         self.name = data["name"]
+        self.handles = data["handles"]
         for name, player in data["players"].items():
             self.players[name] = Player(name)
             self.players[name].set_K(player["K"])
@@ -191,6 +209,7 @@ class League(JsonSerializable):
             name = tournament["name"]
             self.tournaments[name] = Tournament(name, link, is_ranked)
             self.tournaments[name].assign_sets(tournament["sets"])
+            self.attendies = tournament["attendies"]
 
 
   
@@ -245,22 +264,61 @@ class League(JsonSerializable):
                 
                 self.players[w_name].add_set(name, curr_set)
                 self.players[l_name].add_set(name, curr_set)
+                
+                tournament.add_attendie(w_name)
+                tournament.add_attendie(l_name)
 
         self.handles = handles
          
 
-    def processRanks(self):
-        # iterate through tournaments, calculating
-        # ranks of all players
-        for name, tournament in self.tournaments.items():
-            # Only process tournament if it's ranked
-              if(tournament.get_status() == True):
-                    # tournament contains sets in form of (winner, loser)
-                    current_sets = tournament.get_sets()
-                    # check if winner and loser are players in the league
-                    for set in current_sets:
-                        res = set.get_set()
-                        print("Finding players for set: (%s vs %s)"%(res[0], res[1]))
-                        winner = self.get_player(res[0])
-                        loser = self.get_player(res[1])
-                        score_set(winner, loser)
+    
+    def processRanks(self, decay=False):
+        tournaments = self.get_tournaments()
+        players = self.get_players()
+        for name, tournament in tournaments.items():
+            # apply ranking algorithm for each match in each set:
+            t_sets = tournament.get_sets()
+            #print("\nTournament: %s\n"%(name))
+            for c_set in t_sets:
+                winner = self.get_player(c_set["winner"])
+                loser = self.get_player(c_set["loser"])
+                #print("Scoring %s (%s) vs %s (%s)"%(winner.get_name(), winner.get_rank_current(), loser.get_name(), loser.get_rank_current()))
+                elo_score_set(winner, loser)
+                #print("Scored  %s (%s) vs %s (%s)"%(winner.get_name(), winner.get_rank_current(), loser.get_name(), loser.get_rank_current()))
+                winner.add_set(name, c_set)
+                loser.add_set(name, c_set)
+                
+            
+            for name, player in players.items():
+                player.commit_rank()
+        
+        if(decay==True):
+            processDecay(self.get_player("Greg"), self.players, 50)
+            processDecay(self.get_player("Greg"), self.players, 50)
+            processDecay(self.get_player("Mishi"), self.players, 50)
+            processDecay(self.get_player("Mishi"), self.players, 50)
+            processDecay(self.get_player("Mishi"), self.players, 50)
+            processDecay(self.get_player("Mishi"), self.players, 50)
+            processDecay(self.get_player("Dave"), self.players, 50)
+            processDecay(self.get_player("Dave"), self.players, 50)
+            processDecay(self.get_player("Dave"), self.players, 50)
+            processDecay(self.get_player("Dave"), self.players, 50)
+            processDecay(self.get_player("Mike"), self.players, 50)
+            processDecay(self.get_player("Mike"), self.players, 50)
+            processDecay(self.get_player("Mike"), self.players, 50)
+            processDecay(self.get_player("Mike"), self.players, 50)
+            processDecay(self.get_player("Jon"), self.players, 50)
+            processDecay(self.get_player("Jon"), self.players, 50)
+            processDecay(self.get_player("Jon"), self.players, 50)
+            processDecay(self.get_player("Jon"), self.players, 50)
+            processDecay(self.get_player("Jon"), self.players, 50)
+            processDecay(self.get_player("Boone"), self.players, 50)
+            processDecay(self.get_player("Boone"), self.players, 50)
+            processDecay(self.get_player("Boone"), self.players, 50)
+            processDecay(self.get_player("Boone"), self.players, 50)
+            processDecay(self.get_player("Boone"), self.players, 50)
+            
+            
+
+                
+                

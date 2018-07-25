@@ -3,16 +3,8 @@
     "players": {
         "Lee": {
             "name": "Lee",
-            "rank_current": 1268.132912344073,
-            "rank_history": [
-                1239.9917180729458,
-                1239.9917180729458,
-                1244.978712920382,
-                1256.487652930326,
-                1256.487652930326,
-                1249.3605741788997,
-                1263.9504402031496
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -192,16 +184,8 @@
         },
         "Calvin": {
             "name": "Calvin",
-            "rank_current": 1212.5750496777425,
-            "rank_history": [
-                1200.0,
-                1200.0,
-                1210.0692492489648,
-                1209.5362161605065,
-                1209.5362161605065,
-                1209.9958515475644,
-                1209.9958515475644
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -319,16 +303,8 @@
         },
         "David": {
             "name": "David",
-            "rank_current": 1328.655372685499,
-            "rank_history": [
-                1219.7205382437342,
-                1235.7451325443055,
-                1241.5455739501083,
-                1230.7165300159213,
-                1243.0208556862815,
-                1279.2210832654987,
-                1322.7165288731192
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -584,16 +560,8 @@
         },
         "Zane": {
             "name": "Zane",
-            "rank_current": 1127.2813939374519,
-            "rank_history": [
-                1180.0,
-                1182.9811221883078,
-                1185.511207618991,
-                1176.8551310586543,
-                1144.9113825307668,
-                1127.1548376909104,
-                1127.1548376909104
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -757,16 +725,8 @@
         },
         "Mike": {
             "name": "Mike",
-            "rank_current": 1172.7988035989035,
-            "rank_history": [
-                1190.0,
-                1190.0,
-                1171.3640028021262,
-                1171.3640028021262,
-                1171.3640028021262,
-                1171.3640028021262,
-                1171.3640028021262
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -808,16 +768,8 @@
         },
         "Jon": {
             "name": "Jon",
-            "rank_current": 1181.6904631806601,
-            "rank_history": [
-                1180.0,
-                1180.0,
-                1180.0,
-                1180.0,
-                1180.0,
-                1180.0,
-                1180.0
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -839,16 +791,8 @@
         },
         "Boone": {
             "name": "Boone",
-            "rank_current": 1202.579153768691,
-            "rank_history": [
-                1200.28774368332,
-                1200.28774368332,
-                1200.28774368332,
-                1200.28774368332,
-                1200.28774368332,
-                1200.28774368332,
-                1200.28774368332
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -882,16 +826,8 @@
         },
         "Crystal": {
             "name": "Crystal",
-            "rank_current": 1128.8747886520457,
-            "rank_history": [
-                1190.0,
-                1170.5506741208396,
-                1163.822600401226,
-                1158.6624174010233,
-                1158.6624174010233,
-                1165.1485603184872,
-                1128.7024340193777
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -1055,16 +991,8 @@
         },
         "Skyler": {
             "name": "Skyler",
-            "rank_current": 1323.7302209999273,
-            "rank_history": [
-                null,
-                1239.9549675076885,
-                1286.5121526539908,
-                1317.9347576806742,
-                1317.9347576806742,
-                1317.9347576806742,
-                1317.9347576806742
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -1168,16 +1096,8 @@
         },
         "Mishi": {
             "name": "Mishi",
-            "rank_current": 1182.2574950151372,
-            "rank_history": [
-                null,
-                1180.550725523307,
-                1180.550725523307,
-                1180.550725523307,
-                1180.550725523307,
-                1180.550725523307,
-                1180.550725523307
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -1199,16 +1119,8 @@
         },
         "Benton": {
             "name": "Benton",
-            "rank_current": 1213.1846297632096,
-            "rank_history": [
-                null,
-                1201.0149236609564,
-                1190.6376798698066,
-                1203.7398150125541,
-                1243.667177333073,
-                1246.5330715972343,
-                1210.5878761079623
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -1408,16 +1320,8 @@
         },
         "Hayden": {
             "name": "Hayden",
-            "rank_current": 1182.8232684313157,
-            "rank_history": [
-                null,
-                1189.2020256611515,
-                1201.4000430829863,
-                1201.4000430829863,
-                1201.4000430829863,
-                1181.1002285012307,
-                1181.1002285012307
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -1491,16 +1395,8 @@
         },
         "Greg": {
             "name": "Greg",
-            "rank_current": 1094.098541059039,
-            "rank_history": [
-                null,
-                1189.7209670371778,
-                1179.111036666446,
-                1179.111036666446,
-                1179.111036666446,
-                1179.111036666446,
-                1144.098541059039
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -1604,16 +1500,8 @@
         },
         "Jacob": {
             "name": "Jacob",
-            "rank_current": 1323.9531216497553,
-            "rank_history": [
-                null,
-                null,
-                1233.9026637141271,
-                1242.7288437255543,
-                1242.7288437255543,
-                1244.8341180690677,
-                1318.1511710909956
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -1785,16 +1673,8 @@
         },
         "Adam": {
             "name": "Adam",
-            "rank_current": 1215.3409608096572,
-            "rank_history": [
-                null,
-                null,
-                1180.000840782269,
-                1180.000840782269,
-                1171.900624521425,
-                1212.6821009527482,
-                1212.6821009527482
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -1880,16 +1760,8 @@
         },
         "Conner": {
             "name": "Conner",
-            "rank_current": 1172.0829626801467,
-            "rank_history": [
-                null,
-                null,
-                1190.050884133678,
-                1170.6687417033502,
-                1170.6687417033502,
-                1170.6687417033502,
-                1170.6687417033502
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -1931,16 +1803,8 @@
         },
         "Drew": {
             "name": "Drew",
-            "rank_current": 1076.2901015245313,
-            "rank_history": [
-                null,
-                null,
-                1180.810275886342,
-                1160.5108947090523,
-                1160.5108947090523,
-                1143.3363019463436,
-                1077.6303613261725
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -2046,16 +1910,8 @@
         },
         "Steven": {
             "name": "Steven",
-            "rank_current": 1183.1505036537299,
-            "rank_history": [
-                null,
-                null,
-                1199.8904630675986,
-                1199.8904630675986,
-                1199.8904630675986,
-                1181.4180529899097,
-                1181.4180529899097
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -2103,16 +1959,8 @@
         },
         "Dave": {
             "name": "Dave",
-            "rank_current": 1181.2314061580507,
-            "rank_history": [
-                null,
-                null,
-                1179.5541439943306,
-                1179.5541439943306,
-                1179.5541439943306,
-                1179.5541439943306,
-                1179.5541439943306
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -2134,16 +1982,8 @@
         },
         "Landon": {
             "name": "Landon",
-            "rank_current": 1232.9959808890944,
-            "rank_history": [
-                null,
-                null,
-                null,
-                null,
-                1199.2690319757164,
-                1199.3004068843154,
-                1229.8282922536762
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -2259,16 +2099,8 @@
         },
         "Kent": {
             "name": "Kent",
-            "rank_current": 1173.5669679014397,
-            "rank_history": [
-                null,
-                null,
-                null,
-                null,
-                1178.5432448221359,
-                1170.4436600042357,
-                1172.1100826085797
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -2366,16 +2198,8 @@
         },
         "Ross": {
             "name": "Ross",
-            "rank_current": 1212.0779683620449,
-            "rank_history": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                1209.5130853884566
-            ],
+            "rank_current": null,
+            "rank_history": [],
             "K": 20,
             "is_ranked": true,
             "sets": {
@@ -2529,7 +2353,16 @@
                     "loser": "David"
                 }
             ],
-            "attendies": []
+            "attendies": [
+                "Lee",
+                "Calvin",
+                "David",
+                "Zane",
+                "Mike",
+                "Jon",
+                "Boone",
+                "Crystal"
+            ]
         },
         "SB4": {
             "link": "https://api.challonge.com/v1/tournaments/cnf6kpmn/",
@@ -2621,7 +2454,16 @@
                     "loser": "David"
                 }
             ],
-            "attendies": []
+            "attendies": [
+                "Skyler",
+                "Mishi",
+                "Benton",
+                "David",
+                "Zane",
+                "Hayden",
+                "Greg",
+                "Crystal"
+            ]
         },
         "C1": {
             "link": "https://api.challonge.com/v1/tournaments/smashclashone/",
@@ -2809,7 +2651,24 @@
                     "loser": "Jacob"
                 }
             ],
-            "attendies": []
+            "attendies": [
+                "Lee",
+                "Mike",
+                "Crystal",
+                "Greg",
+                "Jacob",
+                "Adam",
+                "Benton",
+                "Conner",
+                "Skyler",
+                "Drew",
+                "Calvin",
+                "Hayden",
+                "David",
+                "Steven",
+                "Zane",
+                "Dave"
+            ]
         },
         "C2": {
             "link": "https://api.challonge.com/v1/tournaments/smashclashtwo/",
@@ -2931,7 +2790,18 @@
                     "loser": "Lee"
                 }
             ],
-            "attendies": []
+            "attendies": [
+                "Crystal",
+                "Drew",
+                "Benton",
+                "Conner",
+                "Skyler",
+                "David",
+                "Calvin",
+                "Lee",
+                "Jacob",
+                "Zane"
+            ]
         },
         "Cinco": {
             "link": "https://api.challonge.com/v1/tournaments/5daymayo/",
@@ -3023,7 +2893,14 @@
                     "loser": "David"
                 }
             ],
-            "attendies": []
+            "attendies": [
+                "David",
+                "Zane",
+                "Benton",
+                "Landon",
+                "Kent",
+                "Adam"
+            ]
         },
         "C3": {
             "link": "https://api.challonge.com/v1/tournaments/smashclashthree/",
@@ -3175,7 +3052,21 @@
                     "loser": "Adam"
                 }
             ],
-            "attendies": []
+            "attendies": [
+                "Crystal",
+                "Zane",
+                "Benton",
+                "Drew",
+                "Calvin",
+                "Kent",
+                "Adam",
+                "Hayden",
+                "Landon",
+                "Steven",
+                "Lee",
+                "Jacob",
+                "David"
+            ]
         },
         "M1": {
             "link": "https://api.challonge.com/v1/tournaments/n4d95xuj/",
@@ -3453,7 +3344,18 @@
                     "loser": "Drew"
                 }
             ],
-            "attendies": []
+            "attendies": [
+                "Landon",
+                "Kent",
+                "Jacob",
+                "Drew",
+                "Ross",
+                "Greg",
+                "David",
+                "Crystal",
+                "Lee",
+                "Benton"
+            ]
         }
     },
     "handles": {
@@ -3515,6 +3417,5 @@
         "Duckpond": "Greg",
         "BellatrixRayne": "Crystal",
         "ScrubbyDoo": "Benton"
-    },
-    "attendies": []
+    }
 }
