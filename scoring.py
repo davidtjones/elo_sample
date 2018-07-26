@@ -17,6 +17,18 @@ def elo_score_set(winner, loser, update=True):
     
     return (w_new_rank, l_new_rank)
 
+def elo_sort(players):
+    plist = []
+    for name, player in players.items():
+        plist.append((name, player.get_rank_current()))
+
+    #filter none types
+    plist_f = list(filter(lambda x: x[1] != None, plist))
+
+    #sort remainder of list
+    plist_s = sorted(plist_f, key=lambda x: x[1], reverse=True)
+    return plist_s
+
 def processDecay(player_d, players, decay, delay=1):
     # delay = 1
     total = 0
