@@ -1,4 +1,6 @@
+#!/home/david/.virtualenvs/elo/bin/python
 # All links to all tournaments, events
+
 import requests
 from tabulate import tabulate
 import numpy as np
@@ -7,7 +9,6 @@ from bokeh.plotting import figure, output_file, show
 from bokeh.io import export_png
 from bokeh.palettes import Spectral4
 from bokeh.sampledata.stocks import AAPL, IBM, MSFT, GOOG
-import numpy as np
 from pprint import pprint
 import json
 import pickle
@@ -27,14 +28,15 @@ print("Forward Smash Rankings 2018")
 if(rerun or not os.path.exists(path)):
     events = {
           "SB1" : [None, False],
-          "SB2" : ['https://api.challonge.com/v1/tournaments/Smashmas2016/', True],
+          "SB2" : ['https://api.challonge.com/v1/tournaments/Smashmas2016/', True, 'T'],
           "SB3" : [None, False],
-          "SB4" : ['https://api.challonge.com/v1/tournaments/cnf6kpmn/', True],
-          "C1"  : ['https://api.challonge.com/v1/tournaments/smashclashone/', True],
-          "C2"  : ['https://api.challonge.com/v1/tournaments/smashclashtwo/', True],
-          "Cinco" : ['https://api.challonge.com/v1/tournaments/5daymayo/', True],
-          "C3" : ['https://api.challonge.com/v1/tournaments/smashclashthree/', True],
-          "M1" : ['https://api.challonge.com/v1/tournaments/n4d95xuj/', True]
+          "SB4" : ['https://api.challonge.com/v1/tournaments/cnf6kpmn/', True, 'T'],
+          "C1"  : ['https://api.challonge.com/v1/tournaments/smashclashone/', True, 'T'],
+          "C2"  : ['https://api.challonge.com/v1/tournaments/smashclashtwo/', True, 'T'],
+          "Cinco" : ['https://api.challonge.com/v1/tournaments/5daymayo/', True, 'T'],
+          "C3" : ['https://api.challonge.com/v1/tournaments/smashclashthree/', True, 'T'],
+          "M1" : ['https://api.challonge.com/v1/tournaments/n4d95xuj/', True, 'M'],
+          "M2" : ['https://api.challonge.com/v1/tournaments/belcan_smash_monthly_2/', True, 'M']
     }
 
     league = League("Forward Smash", events)
@@ -52,41 +54,17 @@ print("%s has %s players and %s tournaments with %s sets."%(league.get_info()))
 for name, player in league.get_players().items():
     player.reset_rank()
 
-
-league.processRanks()
-
-league.save('league.json')       
+league.processRanks(decay_val=20, method='elo', decay=False, delay=1, decay_monthlies=False)
+   
 
 print(tabulate(elo_sort(league.get_players())))
 
 
-for name, player in league.get_players().items():
-    player.reset_rank()
+# for name, player in league.get_players().items():
+#     player.reset_rank()
     
 
-league.processRanks(decay=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# league.processRanks(decay_val=20, method='elo', decay=True, delay=1, decay_monthlies=False)
 
 
 #

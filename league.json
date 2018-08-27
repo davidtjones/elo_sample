@@ -7,7 +7,8 @@
         ],
         "SB2": [
             "https://api.challonge.com/v1/tournaments/Smashmas2016/",
-            true
+            true,
+            "T"
         ],
         "SB3": [
             null,
@@ -15,27 +16,38 @@
         ],
         "SB4": [
             "https://api.challonge.com/v1/tournaments/cnf6kpmn/",
-            true
+            true,
+            "T"
         ],
         "C1": [
             "https://api.challonge.com/v1/tournaments/smashclashone/",
-            true
+            true,
+            "T"
         ],
         "C2": [
             "https://api.challonge.com/v1/tournaments/smashclashtwo/",
-            true
+            true,
+            "T"
         ],
         "Cinco": [
             "https://api.challonge.com/v1/tournaments/5daymayo/",
-            true
+            true,
+            "T"
         ],
         "C3": [
             "https://api.challonge.com/v1/tournaments/smashclashthree/",
-            true
+            true,
+            "T"
         ],
         "M1": [
             "https://api.challonge.com/v1/tournaments/n4d95xuj/",
-            true
+            true,
+            "M"
+        ],
+        "M2": [
+            "https://api.challonge.com/v1/tournaments/belcan_smash_monthly_2/",
+            true,
+            "M"
         ]
     },
     "players": {
@@ -44,7 +56,7 @@
             "name": "Lee",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 0,
@@ -73,7 +85,16 @@
                 140,
                 145,
                 151,
-                157
+                157,
+                164,
+                169,
+                173,
+                177,
+                181,
+                185,
+                190,
+                196,
+                202
             ]
         },
         "Calvin": {
@@ -81,7 +102,7 @@
             "name": "Calvin",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 0,
@@ -100,7 +121,16 @@
                 93,
                 97,
                 106,
-                109
+                109,
+                161,
+                168,
+                172,
+                175,
+                183,
+                186,
+                194,
+                196,
+                204
             ]
         },
         "David": {
@@ -108,7 +138,7 @@
             "name": "David",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 1,
@@ -149,7 +179,16 @@
                 141,
                 148,
                 152,
-                155
+                155,
+                163,
+                166,
+                174,
+                177,
+                184,
+                186,
+                193,
+                197,
+                200
             ]
         },
         "Zane": {
@@ -157,7 +196,7 @@
             "name": "Zane",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 1,
@@ -183,7 +222,16 @@
                 86,
                 89,
                 91,
-                104
+                104,
+                163,
+                167,
+                172,
+                178,
+                180,
+                189,
+                190,
+                199,
+                201
             ]
         },
         "Mike": {
@@ -191,7 +239,7 @@
             "name": "Mike",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 2,
@@ -206,7 +254,7 @@
             "name": "Jon",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 2,
@@ -218,7 +266,7 @@
             "name": "Boone",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 3,
@@ -232,7 +280,7 @@
             "name": "Crystal",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 3,
@@ -258,7 +306,16 @@
                 144,
                 145,
                 154,
-                156
+                156,
+                161,
+                165,
+                173,
+                179,
+                180,
+                188,
+                192,
+                197,
+                203
             ]
         },
         "Skyler": {
@@ -266,7 +323,7 @@
             "name": "Skyler",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 14,
@@ -291,7 +348,7 @@
             "name": "Mishi",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 14,
@@ -303,7 +360,7 @@
             "name": "Benton",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 15,
@@ -343,7 +400,7 @@
             "name": "Hayden",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 16,
@@ -355,7 +412,16 @@
                 52,
                 54,
                 94,
-                106
+                106,
+                164,
+                165,
+                171,
+                178,
+                182,
+                187,
+                193,
+                195,
+                204
             ]
         },
         "Greg": {
@@ -363,7 +429,7 @@
             "name": "Greg",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 17,
@@ -388,7 +454,7 @@
             "name": "Jacob",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 30,
@@ -416,7 +482,16 @@
                 143,
                 147,
                 152,
-                158
+                158,
+                160,
+                169,
+                174,
+                176,
+                183,
+                187,
+                192,
+                198,
+                201
             ]
         },
         "Adam": {
@@ -424,7 +499,7 @@
             "name": "Adam",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 30,
@@ -438,7 +513,16 @@
                 111,
                 112,
                 113,
-                114
+                114,
+                162,
+                167,
+                170,
+                176,
+                184,
+                185,
+                194,
+                195,
+                203
             ]
         },
         "Conner": {
@@ -446,7 +530,7 @@
             "name": "Conner",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 31,
@@ -461,7 +545,7 @@
             "name": "Drew",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 32,
@@ -486,7 +570,7 @@
             "name": "Steven",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 34,
@@ -502,7 +586,7 @@
             "name": "Dave",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 35,
@@ -514,7 +598,7 @@
             "name": "Landon",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 78,
@@ -533,7 +617,16 @@
                 143,
                 146,
                 154,
-                157
+                157,
+                160,
+                166,
+                170,
+                175,
+                182,
+                188,
+                191,
+                199,
+                202
             ]
         },
         "Kent": {
@@ -541,7 +634,7 @@
             "name": "Kent",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 79,
@@ -557,7 +650,16 @@
                 142,
                 147,
                 153,
-                156
+                156,
+                162,
+                168,
+                171,
+                179,
+                181,
+                189,
+                191,
+                198,
+                200
             ]
         },
         "Ross": {
@@ -565,7 +667,7 @@
             "name": "Ross",
             "rank_current": null,
             "rank_history": [],
-            "K": 20,
+            "K": 10,
             "is_ranked": true,
             "sets": [
                 117,
@@ -611,7 +713,8 @@
                 "Jon",
                 "Boone",
                 "Crystal"
-            ]
+            ],
+            "classification": "T"
         },
         "SB4": {
             "link": "https://api.challonge.com/v1/tournaments/cnf6kpmn/",
@@ -642,7 +745,8 @@
                 "Hayden",
                 "Greg",
                 "Crystal"
-            ]
+            ],
+            "classification": "T"
         },
         "C1": {
             "link": "https://api.challonge.com/v1/tournaments/smashclashone/",
@@ -697,7 +801,8 @@
                 "Steven",
                 "Zane",
                 "Dave"
-            ]
+            ],
+            "classification": "T"
         },
         "C2": {
             "link": "https://api.challonge.com/v1/tournaments/smashclashtwo/",
@@ -735,7 +840,8 @@
                 "Lee",
                 "Jacob",
                 "Zane"
-            ]
+            ],
+            "classification": "T"
         },
         "Cinco": {
             "link": "https://api.challonge.com/v1/tournaments/5daymayo/",
@@ -764,7 +870,8 @@
                 "Landon",
                 "Kent",
                 "Adam"
-            ]
+            ],
+            "classification": "T"
         },
         "C3": {
             "link": "https://api.challonge.com/v1/tournaments/smashclashthree/",
@@ -810,7 +917,8 @@
                 "Lee",
                 "Jacob",
                 "David"
-            ]
+            ],
+            "classification": "T"
         },
         "M1": {
             "link": "https://api.challonge.com/v1/tournaments/n4d95xuj/",
@@ -874,7 +982,73 @@
                 "Crystal",
                 "Lee",
                 "Benton"
-            ]
+            ],
+            "classification": "M"
+        },
+        "M2": {
+            "link": "https://api.challonge.com/v1/tournaments/belcan_smash_monthly_2/",
+            "name": "M2",
+            "is_ranked": true,
+            "sets": [
+                160,
+                161,
+                162,
+                163,
+                164,
+                165,
+                166,
+                167,
+                168,
+                169,
+                170,
+                171,
+                172,
+                173,
+                174,
+                175,
+                176,
+                177,
+                178,
+                179,
+                180,
+                181,
+                182,
+                183,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                193,
+                194,
+                195,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                202,
+                203,
+                204
+            ],
+            "attendies": [
+                "Jacob",
+                "Landon",
+                "Calvin",
+                "Crystal",
+                "Adam",
+                "Kent",
+                "David",
+                "Zane",
+                "Lee",
+                "Hayden"
+            ],
+            "classification": "M"
         }
     },
     "sets": [
@@ -1837,9 +2011,289 @@
             "dq": false,
             "winner": "Benton",
             "loser": "Drew"
+        },
+        {
+            "index": 160,
+            "dq": false,
+            "winner": "Jacob",
+            "loser": "Landon"
+        },
+        {
+            "index": 161,
+            "dq": false,
+            "winner": "Calvin",
+            "loser": "Crystal"
+        },
+        {
+            "index": 162,
+            "dq": false,
+            "winner": "Adam",
+            "loser": "Kent"
+        },
+        {
+            "index": 163,
+            "dq": false,
+            "winner": "David",
+            "loser": "Zane"
+        },
+        {
+            "index": 164,
+            "dq": false,
+            "winner": "Lee",
+            "loser": "Hayden"
+        },
+        {
+            "index": 165,
+            "dq": false,
+            "winner": "Crystal",
+            "loser": "Hayden"
+        },
+        {
+            "index": 166,
+            "dq": false,
+            "winner": "David",
+            "loser": "Landon"
+        },
+        {
+            "index": 167,
+            "dq": false,
+            "winner": "Adam",
+            "loser": "Zane"
+        },
+        {
+            "index": 168,
+            "dq": false,
+            "winner": "Calvin",
+            "loser": "Kent"
+        },
+        {
+            "index": 169,
+            "dq": false,
+            "winner": "Jacob",
+            "loser": "Lee"
+        },
+        {
+            "index": 170,
+            "dq": false,
+            "winner": "Adam",
+            "loser": "Landon"
+        },
+        {
+            "index": 171,
+            "dq": false,
+            "winner": "Kent",
+            "loser": "Hayden"
+        },
+        {
+            "index": 172,
+            "dq": false,
+            "winner": "Calvin",
+            "loser": "Zane"
+        },
+        {
+            "index": 173,
+            "dq": false,
+            "winner": "Lee",
+            "loser": "Crystal"
+        },
+        {
+            "index": 174,
+            "dq": false,
+            "winner": "Jacob",
+            "loser": "David"
+        },
+        {
+            "index": 175,
+            "dq": false,
+            "winner": "Calvin",
+            "loser": "Landon"
+        },
+        {
+            "index": 176,
+            "dq": false,
+            "winner": "Jacob",
+            "loser": "Adam"
+        },
+        {
+            "index": 177,
+            "dq": false,
+            "winner": "David",
+            "loser": "Lee"
+        },
+        {
+            "index": 178,
+            "dq": false,
+            "winner": "Zane",
+            "loser": "Hayden"
+        },
+        {
+            "index": 179,
+            "dq": false,
+            "winner": "Kent",
+            "loser": "Crystal"
+        },
+        {
+            "index": 180,
+            "dq": false,
+            "winner": "Zane",
+            "loser": "Crystal"
+        },
+        {
+            "index": 181,
+            "dq": false,
+            "winner": "Lee",
+            "loser": "Kent"
+        },
+        {
+            "index": 182,
+            "dq": false,
+            "winner": "Landon",
+            "loser": "Hayden"
+        },
+        {
+            "index": 183,
+            "dq": false,
+            "winner": "Jacob",
+            "loser": "Calvin"
+        },
+        {
+            "index": 184,
+            "dq": false,
+            "winner": "Adam",
+            "loser": "David"
+        },
+        {
+            "index": 185,
+            "dq": false,
+            "winner": "Lee",
+            "loser": "Adam"
+        },
+        {
+            "index": 186,
+            "dq": false,
+            "winner": "David",
+            "loser": "Calvin"
+        },
+        {
+            "index": 187,
+            "dq": false,
+            "winner": "Jacob",
+            "loser": "Hayden"
+        },
+        {
+            "index": 188,
+            "dq": false,
+            "winner": "Landon",
+            "loser": "Crystal"
+        },
+        {
+            "index": 189,
+            "dq": false,
+            "winner": "Kent",
+            "loser": "Zane"
+        },
+        {
+            "index": 190,
+            "dq": false,
+            "winner": "Lee",
+            "loser": "Zane"
+        },
+        {
+            "index": 191,
+            "dq": false,
+            "winner": "Landon",
+            "loser": "Kent"
+        },
+        {
+            "index": 192,
+            "dq": false,
+            "winner": "Jacob",
+            "loser": "Crystal"
+        },
+        {
+            "index": 193,
+            "dq": false,
+            "winner": "David",
+            "loser": "Hayden"
+        },
+        {
+            "index": 194,
+            "dq": false,
+            "winner": "Adam",
+            "loser": "Calvin"
+        },
+        {
+            "index": 195,
+            "dq": false,
+            "winner": "Adam",
+            "loser": "Hayden"
+        },
+        {
+            "index": 196,
+            "dq": false,
+            "winner": "Lee",
+            "loser": "Calvin"
+        },
+        {
+            "index": 197,
+            "dq": false,
+            "winner": "David",
+            "loser": "Crystal"
+        },
+        {
+            "index": 198,
+            "dq": false,
+            "winner": "Jacob",
+            "loser": "Kent"
+        },
+        {
+            "index": 199,
+            "dq": false,
+            "winner": "Landon",
+            "loser": "Zane"
+        },
+        {
+            "index": 200,
+            "dq": false,
+            "winner": "David",
+            "loser": "Kent"
+        },
+        {
+            "index": 201,
+            "dq": false,
+            "winner": "Jacob",
+            "loser": "Zane"
+        },
+        {
+            "index": 202,
+            "dq": false,
+            "winner": "Lee",
+            "loser": "Landon"
+        },
+        {
+            "index": 203,
+            "dq": false,
+            "winner": "Adam",
+            "loser": "Crystal"
+        },
+        {
+            "index": 204,
+            "dq": false,
+            "winner": "Calvin",
+            "loser": "Hayden"
         }
     ],
-    "set_count": 160,
+    "set_count": 205,
+    "event_keys_ordered": [
+        "SB2",
+        "SB4",
+        "C1",
+        "C2",
+        "Cinco",
+        "C3",
+        "M1",
+        "M2"
+    ],
     "handles": {
         "SmashMaster (Lee Cook, Reigning Champ)": "Lee",
         "C Kizzle (Calvin Keats)": "Calvin",
@@ -1898,6 +2352,8 @@
         "Sorks": "Ross",
         "Duckpond": "Greg",
         "BellatrixRayne": "Crystal",
-        "ScrubbyDoo": "Benton"
+        "ScrubbyDoo": "Benton",
+        "VengefulFenix": "Zane",
+        "Laeddis": "Hayden"
     }
 }

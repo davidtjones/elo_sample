@@ -1,4 +1,8 @@
-def elo_score_set(winner, loser, update=True):
+def elo_score_set(winner, loser, classification, update=True):
+    if(classification == 'M'):
+        K_divisor = .5
+    else:
+        K_divisor = 1
     if((winner.get_rank_current()) == None): winner.set_rank_current(1200)
     if((loser.get_rank_current()) == None): loser.set_rank_current(1200)
     
@@ -8,8 +12,8 @@ def elo_score_set(winner, loser, update=True):
     #choose lowest K
     low_K = winner.get_K() if winner.get_K() <= loser.get_K() else loser.get_K()
     
-    w_new_rank = winner.get_rank_current() + low_K * (1 - P1)
-    l_new_rank = loser.get_rank_current() + low_K * (0 - P2)
+    w_new_rank = winner.get_rank_current() + (low_K*K_divisor) * (1 - P1)
+    l_new_rank = loser.get_rank_current() + (low_K*K_divisor) * (0 - P2)
     
     if(update== True):
         winner.set_rank_current(w_new_rank)
@@ -32,6 +36,7 @@ def elo_sort(players):
 def processDecay(player_d, players, decay, delay=1):
     # delay = 1
     total = 0
+    print("processing decay for %s"%(player_d.get_name()))
     for name, player in players.items():
         w, l = elo_score_set(player, player_d, update=False)
         total += (w - player.get_rank_current())

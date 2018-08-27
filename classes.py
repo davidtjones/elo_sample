@@ -25,13 +25,16 @@ class Player(JsonSerializable):
         self.rank_current = None
         self.rank_history = [] # no score if the player hasn't played a ranked match yet
         #self.handles = []
-        self.K = 20
+        self.K = 10
         self.is_ranked = True
         self.sets = []
 
     def __str__(self):
         return self.name
-   
+    
+    def set_index(self, index):
+        self.index = index
+
     def get_name(self):
         return self.name
 
@@ -109,13 +112,17 @@ class Set(JsonSerializable):
     def is_dq(self):
         return self.dq
 
+    def set_dq(self, dq):
+        self.dq = dq
+
 class Tournament(JsonSerializable):
-    def __init__(self, name, link, is_ranked):
+    def __init__(self, name, link, is_ranked, classification):
         self.link = link
         self.name = name
         self.is_ranked = is_ranked
         self.sets = []
         self.attendies = []
+        self.classification = classification
 
     
     def get_name(self):
@@ -179,6 +186,9 @@ class Tournament(JsonSerializable):
         
     def get_attendies(self):
         return self.attendies
+        
+    def get_classification(self):
+        return self.classification
         
 
 
@@ -256,13 +266,14 @@ class League(JsonSerializable):
             "Duckpond": "Greg",
             "BellatrixRayne": "Crystal",
             "ScrubbyDoo": "Benton"}
+            
         if(events is not None):
             # Generate from API
             print("Generating via API")
             for name, data in self.events.items():
                 if(events[name][0] != None):
-                    event_keys.ordered.append(name)
-                    t = Tournament(name, data[0], data[1])
+                    self.event_keys_ordered.append(name)
+                    t = Tournament(name, data[0], data[1], data[2])
                     res = self.add_tournament(t)
                     if (res ==  True):
                         raw_sets = t.fetch_sets(api_key)
@@ -329,7 +340,7 @@ class League(JsonSerializable):
         data = json.loads(f, encoding='utf-8')
         self.name = data["name"]
         self.handles = data["handles"]
-        self.sets = data["sets"]
+        
         self.events = data['events']
         self.event_keys_ordered = data["event_keys_ordered"]
         self.player_count = data['player_count']
@@ -342,16 +353,24 @@ class League(JsonSerializable):
             self.players[name].set_K(player["K"])
             self.players[name].set_rank_current(player["rank_current"])
             self.players[name].set_rank_history(player["rank_history"])
-            self.players[name].set_status(player['is_ranked'])
-            self.player[name].assign_sets(player['sets'])
+            self.players[name].set_rank_status(player['is_ranked'])
+            self.players[name].assign_sets(player['sets'])
         
         for name, tournament in data["tournaments"].items():
             is_ranked = tournament["is_ranked"]
             link = tournament["link"]
             name = tournament["name"]
-            self.tournaments[name] = Tournament(name, link, is_ranked)
+            classification = tournament["classification"]
+            self.tournaments[name] = Tournament(name, link, is_ranked, classification)
             self.tournaments[name].assign_sets(tournament["sets"])
             self.attendies = tournament["attendies"]
+
+        for item in data["sets"]:
+            loaded_set = Set(item['winner'], item['loser'])
+            loaded_set.set_dq(item['dq'])
+            loaded_set.set_index(item['index'])
+            self.sets.append(loaded_set)
+
 
     def preprocess_sets(self, tournament, raw_matches):
         # Get mapping of known handles
@@ -406,7 +425,7 @@ class League(JsonSerializable):
 
         self.handles = handles
 
-    def processRanks(self, method='elo', decay=False, delay=1, decay_monthlies=False):
+    def processRanks(self, decay_val, method='elo', decay=True, delay=1, decay_monthlies=False):
         # process ranks via selected scoring method
         # apply decay via decay params
         # assign ranks and commit them to player rank histories
@@ -414,28 +433,36 @@ class League(JsonSerializable):
         set_of_all_players = set()
         for player_name in self.players:
             set_of_all_players.add(player_name)
-
+        
+        print("Here are all the players in the set")
+        print(set_of_all_players)
         players_being_decayed = set()
 
         # Rank all players and decay players who are slated for decay
         do_decay = False
         for index, t in enumerate(self.tournaments):
+            current_classification = self.tournaments[t].get_classification()
             # determine if decay needs to occur:
-
-            if(index%decay == 0 and index != 0):
-                # acquire list of participants slated for decay
+            print(index, delay, decay)
+            if(index >= delay - 1 and decay):
+             # acquire list of participants slated for decay
+                print("time to do decay :D")
                 do_decay = True
                 prev_tourney_sets = []
-
+                
+                print("Attendie list for players not being decayed:")
                 for i in range(delay):
-                    # need the previous 2 tournaments (index, index - 1, index - 2)
-                    prev_tourney_sets.append(set(self.tournaments[event_keys_ordered(index - i)].get_attendies()))
+                    # need the previous $delay tournaments (index, index - 1, index - 2)
+                    prev_tourney_attendies.append(set(self.tournaments[self.event_keys_ordered[index - i]].get_attendies()))
+                print(prev_tourney_attendies)
+                exit()
 
                 players_not_being_decayed = set()
-
+                print("wtf")
                 for tourney in prev_tourney_sets:
                     players_not_being_decayed =  players_not_being_decayed.intersection(tourney)
-
+                print("players not being decayed:")
+                print(players_not_being_decayed)
                 players_being_decayed = set_of_all_players - players_not_being_decayed
 
 
@@ -443,76 +470,21 @@ class League(JsonSerializable):
 
             for current_set in t_sets:
                 # get winner and loser from set id
-                winner, loser = self.sets[current_set].get_set()
-
-                #score winner and loser and apply new ranks, unless match is DQ
-                if(c_set["dq"] == False):
-                    elo_score_set(self.players[winner], self.players[loser])
+                # score winner and loser and apply new ranks, unless match is DQ
+                if(self.sets[current_set].is_dq() == False):
+                    winner, loser = self.sets[current_set].get_set()
+                    elo_score_set(self.players[winner], self.players[loser], current_classification)
 
             # apply decay now that tournament has finished
-            for player in players_being_decayed:
-                processDecay(self.get_player(player), self.players, decay)
+            if(do_decay):
+                print("players being decayed for %s:"%(self.tournaments[t].get_name()))
+                for player in players_being_decayed:
+                    processDecay(self.get_player(player), self.players, decay)
+                    do_decay = False
+            
 
 
-            for name, player in players.items():
+            for name, player in self.players.items():
                 player.commit_rank()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        for name, tournament in tournaments.items():
-            # apply ranking algorithm for each match in each set:
-            t_sets = tournament.get_sets()
-            #print("\nTournament: %s\n"%(name))
-            for c_set in t_sets:
-                winner = self.get_player(c_set["winner"])
-                loser = self.get_player(c_set["loser"])
-                #print("Scoring %s (%s) vs %s (%s)"%(winner.get_name(), winner.get_rank_current(), loser.get_name(), loser.get_rank_current()))
-               
-                    elo_score_set(winner, loser)
-                #print("Scored  %s (%s) vs %s (%s)"%(winner.get_name(), winner.get_rank_current(), loser.get_name(), loser.get_rank_current()))
-            
-
-        
-        if(decay==True):
-            decay_val = 20
-            processDecay(self.get_player("Greg"), self.players, decay_val)
-            processDecay(self.get_player("Greg"), self.players, decay_val)
-            processDecay(self.get_player("Mishi"), self.players, decay_val)
-            processDecay(self.get_player("Mishi"), self.players, decay_val)
-            processDecay(self.get_player("Mishi"), self.players, decay_val)
-            processDecay(self.get_player("Mishi"), self.players, decay_val)
-            processDecay(self.get_player("Dave"), self.players, decay_val)
-            processDecay(self.get_player("Dave"), self.players, decay_val)
-            processDecay(self.get_player("Dave"), self.players, decay_val)
-            processDecay(self.get_player("Dave"), self.players, decay_val)
-            processDecay(self.get_player("Mike"), self.players, decay_val)
-            processDecay(self.get_player("Mike"), self.players, decay_val)
-            processDecay(self.get_player("Mike"), self.players, decay_val)
-            processDecay(self.get_player("Mike"), self.players, decay_val)
-            processDecay(self.get_player("Jon"), self.players, decay_val)
-            processDecay(self.get_player("Jon"), self.players, decay_val)
-            processDecay(self.get_player("Jon"), self.players, decay_val)
-            processDecay(self.get_player("Jon"), self.players, decay_val)
-            processDecay(self.get_player("Jon"), self.players, decay_val)
-            processDecay(self.get_player("Boone"), self.players, decay_val)
-            processDecay(self.get_player("Boone"), self.players, decay_val)
-            processDecay(self.get_player("Boone"), self.players, decay_val)
-            processDecay(self.get_player("Boone"), self.players, decay_val)
-            processDecay(self.get_player("Boone"), self.players, decay_val)
-            
-            
-
-                
+              
                 
