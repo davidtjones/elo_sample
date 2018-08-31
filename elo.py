@@ -55,23 +55,17 @@ for name, player in league.get_players().items():
     player.reset_rank()
 
 league.processRanks(decay_val=20, method='elo', decay=False, delay=1, decay_monthlies=False)
-   
+league.save('noDecayResults.json')   
 
 print(tabulate(elo_sort(league.get_players())))
 
 
-# for name, player in league.get_players().items():
-#     player.reset_rank()
-    
+for name, player in league.get_players().items():
+    player.reset_rank()
+league.save(path)
 
-# league.processRanks(decay_val=20, method='elo', decay=True, delay=1, decay_monthlies=False)
-
-
-#
-# Results
-#
-
-
+league.processRanks(decay_val=20, method='elo', decay=True, delay=1, decay_monthlies=False)
+league.save('decayResults.json')
 
 print(tabulate(elo_sort(league.get_players())))
 

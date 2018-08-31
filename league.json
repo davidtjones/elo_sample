@@ -704,16 +704,7 @@
                 12,
                 13
             ],
-            "attendies": [
-                "Lee",
-                "Calvin",
-                "David",
-                "Zane",
-                "Mike",
-                "Jon",
-                "Boone",
-                "Crystal"
-            ],
+            "attendies": [],
             "classification": "T"
         },
         "SB4": {
@@ -736,16 +727,7 @@
                 26,
                 27
             ],
-            "attendies": [
-                "Skyler",
-                "Mishi",
-                "Benton",
-                "David",
-                "Zane",
-                "Hayden",
-                "Greg",
-                "Crystal"
-            ],
+            "attendies": [],
             "classification": "T"
         },
         "C1": {
@@ -784,24 +766,7 @@
                 56,
                 57
             ],
-            "attendies": [
-                "Lee",
-                "Mike",
-                "Crystal",
-                "Greg",
-                "Jacob",
-                "Adam",
-                "Benton",
-                "Conner",
-                "Skyler",
-                "Drew",
-                "Calvin",
-                "Hayden",
-                "David",
-                "Steven",
-                "Zane",
-                "Dave"
-            ],
+            "attendies": [],
             "classification": "T"
         },
         "C2": {
@@ -829,18 +794,7 @@
                 75,
                 76
             ],
-            "attendies": [
-                "Crystal",
-                "Drew",
-                "Benton",
-                "Conner",
-                "Skyler",
-                "David",
-                "Calvin",
-                "Lee",
-                "Jacob",
-                "Zane"
-            ],
+            "attendies": [],
             "classification": "T"
         },
         "Cinco": {
@@ -863,14 +817,7 @@
                 89,
                 90
             ],
-            "attendies": [
-                "David",
-                "Zane",
-                "Benton",
-                "Landon",
-                "Kent",
-                "Adam"
-            ],
+            "attendies": [],
             "classification": "T"
         },
         "C3": {
@@ -903,21 +850,7 @@
                 113,
                 114
             ],
-            "attendies": [
-                "Crystal",
-                "Zane",
-                "Benton",
-                "Drew",
-                "Calvin",
-                "Kent",
-                "Adam",
-                "Hayden",
-                "Landon",
-                "Steven",
-                "Lee",
-                "Jacob",
-                "David"
-            ],
+            "attendies": [],
             "classification": "T"
         },
         "M1": {
@@ -971,18 +904,7 @@
                 158,
                 159
             ],
-            "attendies": [
-                "Landon",
-                "Kent",
-                "Jacob",
-                "Drew",
-                "Ross",
-                "Greg",
-                "David",
-                "Crystal",
-                "Lee",
-                "Benton"
-            ],
+            "attendies": [],
             "classification": "M"
         },
         "M2": {
@@ -1036,18 +958,7 @@
                 203,
                 204
             ],
-            "attendies": [
-                "Jacob",
-                "Landon",
-                "Calvin",
-                "Crystal",
-                "Adam",
-                "Kent",
-                "David",
-                "Zane",
-                "Lee",
-                "Hayden"
-            ],
+            "attendies": [],
             "classification": "M"
         }
     },
@@ -2355,5 +2266,6 @@
         "ScrubbyDoo": "Benton",
         "VengefulFenix": "Zane",
         "Laeddis": "Hayden"
-    }
+    },
+    "attendies": []
 }
