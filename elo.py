@@ -55,7 +55,7 @@ for name, player in league.get_players().items():
     player.reset_rank()
 
 league.processRanks(decay_val=20, method='elo', decay=False, delay=1, decay_monthlies=False)
-   
+league.save(path)   
 
 print(tabulate(elo_sort(league.get_players())))
 
