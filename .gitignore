@@ -1,3 +1,4 @@
 config.py
 league.1.json
 __pycache__/*
+*.swp
