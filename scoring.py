@@ -48,4 +48,5 @@ def processDecay(player_d, players, decay, delay=1):
             player.set_rank_current(player.get_rank_current() + (slice_d * (w-player.get_rank_current())))
         
     player_d.set_rank_current(player_d.get_rank_current() - decay)
-        
+ 
+       
