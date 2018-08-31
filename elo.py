@@ -73,7 +73,7 @@ print(tabulate(elo_sort(league.get_players())))
 
 
 
-print(tabulate(elo_sort(league.get_players())))
+# print(tabulate(elo_sort(league.get_players())))
 
 # ranks_dt = []
 # for name, player in league.get_players().items():
