@@ -1,4 +1,6 @@
 config.py
 league.1.json
+noDecayResults.json
+decayResults.json
 __pycache__/*
 *.swp
